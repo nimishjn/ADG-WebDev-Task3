@@ -11,14 +11,15 @@
     <link rel="manifest" href="./assets/site.webmanifest">
 
     <script src="https://kit.fontawesome.com/e9ee0e0e4c.js" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
     <link rel="stylesheet" href="./style.css">
 
     <title>Quiz</title>
 </head>
 <body>
     <div class="score-container">
-        <h2>You Scored <br><span id="score">8</span><br> out of 10</h2>
-        <button onclick="window.location.href = './quiz.html';">I WANNA TRY AGAIN</button>
+        <h2 id="score-text">You Scored <br><span id="score">8</span><br> out of 10</h2>
+        <button id="score-button" onclick="window.location.href = './quiz.html';">I WANNA TRY AGAIN</button>
     </div>
 </body>
 </html>

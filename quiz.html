@@ -11,6 +11,7 @@
     <link rel="manifest" href="./assets/site.webmanifest">
 
     <script src="https://kit.fontawesome.com/e9ee0e0e4c.js" crossorigin="anonymous"></script>
+    
     <link rel="stylesheet" href="./style.css">
 
     <script src="https://kit.fontawesome.com/e9ee0e0e4c.js" crossorigin="anonymous"></script>
@@ -21,24 +22,24 @@
         <div class="question">
             <h2 id="question-number">Question #</h2>
             <form id="quiz-options">
-                <label for="question" class="question-text">
+                <label for="question" id="question-text" class="question-text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec magna ut quam dapibus maximus blandit in sem. Etiam elementum euismod pretium.
                 </label><br><br>
                 <div class="quiz-option">
-                    <input type="radio" id="optionA" name="options" class="option" value="optionA">
-                    <label for="optionA">Option A</label>
+                    <input type="radio"  name="options" class="option" value="optionA">
+                    <label id="optionA" for="optionA">Option A</label>
                 </div>
                 <div class="quiz-option">
-                    <input type="radio" id="optionB" name="options" class="option" value="optionB">
-                    <label for="optionB">Option B</label>
+                    <input type="radio" name="options" class="option" value="optionB">
+                    <label id="optionB" for="optionB">Option B</label>
                 </div>
                 <div class="quiz-option">
-                    <input type="radio" id="optionC" name="options" class="option" value="optionC">
-                    <label for="optionC">Option C</label>
+                    <input type="radio" name="options" class="option" value="optionC">
+                    <label id="optionC" for="optionC">Option C</label>
                 </div>
                 <div class="quiz-option">
-                    <input type="radio" id="optionD" name="options" class="option" value="optionD">
-                    <label for="optionD">Option D</label>
+                    <input type="radio" name="options" class="option" value="optionD">
+                    <label id="optionD" for="optionD">Option D</label>
                 </div>
             </form>
         </div>
@@ -55,5 +56,6 @@
             </div>
         </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 </html>
