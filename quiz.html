@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./style.css">
 
     <script src="https://kit.fontawesome.com/e9ee0e0e4c.js" crossorigin="anonymous"></script>
-    <title>Give us some details</title>
+    <title>Quiz</title>
 </head>
 <body>
     <div class="quiz-container">
@@ -26,20 +26,20 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec magna ut quam dapibus maximus blandit in sem. Etiam elementum euismod pretium.
                 </label><br><br>
                 <div class="quiz-option">
-                    <input type="radio"  name="options" class="option" value="optionA">
-                    <label id="optionA" for="optionA">Option A</label>
+                    <input id="radioA" type="radio"  name="options" class="option" value="optionA">
+                    <label id="optionA" for="radioA">Option A</label>
                 </div>
                 <div class="quiz-option">
-                    <input type="radio" name="options" class="option" value="optionB">
-                    <label id="optionB" for="optionB">Option B</label>
+                    <input id="radioB" type="radio" name="options" class="option" value="optionB">
+                    <label id="optionB" for="radioB">Option B</label>
                 </div>
                 <div class="quiz-option">
-                    <input type="radio" name="options" class="option" value="optionC">
-                    <label id="optionC" for="optionC">Option C</label>
+                    <input id="radioC" type="radio" name="options" class="option" value="optionC">
+                    <label id="optionC" for="radioC">Option C</label>
                 </div>
                 <div class="quiz-option">
-                    <input type="radio" name="options" class="option" value="optionD">
-                    <label id="optionD" for="optionD">Option D</label>
+                    <input id="radioD" type="radio" name="options" class="option" value="optionD">
+                    <label id="optionD" for="radioD">Option D</label>
                 </div>
             </form>
         </div>
@@ -51,8 +51,8 @@
                 <hr>
             </div>
             <div class="quiz-buttons">
-                <button>Previous</button>
-                <button>Next</button>
+                <button type="button" id="previous-button" onclick="previousQuestion()">Previous</button>
+                <button type="button" id="next-button" onclick="nextQuestion()">Next</button>
             </div>
         </div>
     </div>
