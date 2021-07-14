@@ -74,14 +74,14 @@ async function formSubmit(event) {
     userData.age = document.getElementById('age').value;
     userData.gender = document.getElementById('age').value;
     userData.email = document.getElementById('email').value;
-    console.log(userData);
+    // console.log(userData);
     document.getElementById('user-form').reset();
     beginQuiz();
 }
 
 async function beginQuiz() {
     var response = await getapi();
-    console.log(response);
+    // console.log(response);
     if(response !== false) {
         questionHandler.setQuestions(response);
         questionHandler.reset();
@@ -105,7 +105,7 @@ async function renderQuestion() {
         for(var i=0;i<radio.length;i++)
             radio[i].checked = false;
     }
-    console.log("Created questions!");
+    // console.log("Created questions!");
     if(questionHandler.questionNumber === 9) {
         document.getElementById('next-button').innerHTML = 'Submit';
     }
@@ -147,8 +147,8 @@ async function previousQuestion() {
 
 async function quizOnSubmit() {
     userData.score = questionHandler.getFinalScore();
-    console.log(userData.score);
-    console.log("Quiz submitted!");
+    // console.log(userData.score);
+    // console.log("Quiz submitted!");
     document.querySelector('body').innerHTML = await fetchHtmlAsText("./score.html");
     document.getElementById('score').innerHTML = userData.score.toString();
 }
