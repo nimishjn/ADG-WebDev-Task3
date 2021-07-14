@@ -42,14 +42,8 @@ class questionHandler {
 const api_url = "https://task-3-api.herokuapp.com/questions";
 
 async function getapi() {
-    const response = await fetch(api_url).then(async () => {
-        var data = await response.json();
-        console.log(data);
-        if (response) {
-            return data;
-        } else {
-            apiError();
-        }
+    return await fetch(api_url).then(async (response) => {
+        return await response.json();
     }).catch(async (e) => {
         console.error(e);
         await apiError();
@@ -87,8 +81,9 @@ async function formSubmit(event) {
 
 async function beginQuiz() {
     var response = await getapi();
-    if(response) {
-        questionHandler.setQuestions();
+    console.log(response);
+    if(response !== false) {
+        questionHandler.setQuestions(response);
         questionHandler.reset();
         document.querySelector('body').innerHTML = await fetchHtmlAsText("./quiz.html");
         renderQuestion();

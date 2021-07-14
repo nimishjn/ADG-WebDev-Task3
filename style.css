@@ -212,7 +212,7 @@ button:hover  {
     margin-bottom: 20px;
 }
 
-.uestion-number {
+.question-number {
     font-weight: 400;
     font-size: 26px;
     margin-bottom: 10px;
@@ -235,10 +235,13 @@ button:hover  {
     appearance: none;
     width: 20px;
     height: 20px;
+    flex-shrink: 0;
     margin: 0;
     background: rgba(204, 203, 201, 1);
     border: none;
     border-radius: 50%;
+    align-self: flex-start;
+    margin-top: 3px;
 }
 
 .quiz-option input:checked {
@@ -262,7 +265,7 @@ button:hover  {
 .time-left {
     margin-bottom: 15px;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 22px;
     letter-spacing: 1%;
 }
 
@@ -297,4 +300,47 @@ button:hover  {
     font-size: 48px;
     letter-spacing: 1%;
     margin-bottom: 70px;
+}
+
+@media screen and (max-width: 530px) {
+    .home-container {
+        width: 95%;
+    }
+
+    button {
+        width: 90%;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .form-container {
+        width: 90%;
+    }
+
+    .form-container form input,select {
+        height: 40px;
+    }
+
+    .quiz-container {
+        width: 90%;
+    }
+
+    .quiz-handler {
+        align-self: center;
+    }
+
+    .quiz-buttons button {
+        width: 120px;
+        height: 40px;
+        margin: 0px 5px;
+    }
+
+    .quiz-option {
+        margin-left: 5px;
+    }
+
+    .quiz-option label {
+        margin-left: 10px;
+    }
 }
