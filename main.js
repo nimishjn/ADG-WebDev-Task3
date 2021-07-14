@@ -54,6 +54,10 @@ async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text();
 }
 
+async function renderFormPage() {
+    document.querySelector('body').innerHTML = await fetchHtmlAsText("./form.html");
+}
+
 async function formSubmit(event) {
     event.preventDefault();
     userData.name = document.getElementById('name').value;
