@@ -42,16 +42,32 @@ class questionHandler {
 const api_url = "https://task-3-api.herokuapp.com/questions";
 
 async function getapi() {
-    const response = await fetch(api_url);
-    var data = await response.json();
-    console.log(data);
-    if (response) {
-        return data;
-    }
+    const response = await fetch(api_url).then(async () => {
+        var data = await response.json();
+        console.log(data);
+        if (response) {
+            return data;
+        } else {
+            apiError();
+        }
+    }).catch(async (e) => {
+        console.error(e);
+        await apiError();
+        return false;
+    });
 }
 
 async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text();
+}
+
+async function apiError() {
+    document.querySelector('body').innerHTML = await fetchHtmlAsText("./score.html");
+    document.getElementById('score-text').innerHTML = "404 error";
+    document.getElementById('score-button').innerHTML = "Back to Home Page";
+    document.getElementById('score-button').onclick = () => {
+        location.reload();
+    };
 }
 
 async function renderFormPage() {
@@ -70,14 +86,16 @@ async function formSubmit(event) {
 }
 
 async function beginQuiz() {
-    questionHandler.setQuestions(await getapi());
-    questionHandler.reset();
-    document.querySelector('body').innerHTML = await fetchHtmlAsText("./quiz.html");
-    renderQuestion();
-    countdown(10, 0);
+    var response = await getapi();
+    if(response) {
+        questionHandler.setQuestions();
+        questionHandler.reset();
+        document.querySelector('body').innerHTML = await fetchHtmlAsText("./quiz.html");
+        renderQuestion();
+        countdown(10, 0);
+    }  
 }
 
-//Change this entire function
 async function renderQuestion() {
     document.getElementById('question-number').innerHTML = questionHandler.questionNumber + 1;
     document.getElementById('question-text').innerHTML = questionHandler.getQuestion().question;
