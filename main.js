@@ -168,10 +168,15 @@ async function quizOnSubmit() {
 }
 
 async function updateLocalStorage() {
-    let oldUserData = JSON.parse(localStorage.getItem("userData"));
-    if(userData.score > oldUserData.score) {
+    if(localStorage.getItem("userData") !== null) {
+        let oldUserData = JSON.parse(localStorage.getItem("userData"));
+        if(userData.score > oldUserData.score) {
+            localStorage.setItem("userData", JSON.stringify(userData));
+        }
+    } else {
         localStorage.setItem("userData", JSON.stringify(userData));
     }
+    
 }
 
 async function renderScorePage() {
